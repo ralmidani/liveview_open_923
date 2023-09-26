@@ -3,3 +3,4 @@
 - Collins Mucheru
 - Flora Petterson
 - Tyler Johnson
+- Daniel Bjanes
