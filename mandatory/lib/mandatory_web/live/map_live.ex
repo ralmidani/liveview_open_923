@@ -5,31 +5,31 @@ defmodule MandatoryWeb.MapLive do
   def render(assigns) do
     ~H"""
     <div>
-      <.button phx-click="inc">
-        Increment
-      </.button>
-      <p> <%= @counter %> </p>
+      <.counter count={@count}/>
     </div>
     """
   end
 
-  def mount(_params, _session, socket) do
-    socket = socket
-    |> assign(counter: "0")
+  attr :count, :any, required: true
+  def counter(assigns) do
+    ~H"""
+      <.button phx-click="inc">
+        Increment
+      </.button>
+      <p> <%= MapCounter.show(@count) %> </p>
+    """
+  end
 
+  def mount(%{"count" => count}, _session, socket) do
+    socket = socket
+    |> assign(count: MapCounter.new(count))
 
     {:ok, socket}
   end
 
-  def handle_event("inc", _params, socket) do
-    updated = socket.assigns.counter
-    |> MapCounter.new()
-    |> MapCounter.add(5)
+  def handle_event("inc", _params, %{assigns: %{count: counter}} = socket) do
+    updated = MapCounter.add(counter, 5)
 
-
-
-
-
-    {:noreply, assign(socket, counter: updated.counter)}
+    {:noreply, assign(socket, count: updated)}
   end
 end
