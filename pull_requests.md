@@ -1,3 +1,4 @@
 - Bruce Tate
 - Onorio Catenacci 
+- Flora Petterson
 - Tyler Johnson
