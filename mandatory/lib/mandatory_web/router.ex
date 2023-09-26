@@ -18,6 +18,7 @@ defmodule MandatoryWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    live "/map/:count", MapLive
   end
 
   # Other scopes may use custom stacks.
