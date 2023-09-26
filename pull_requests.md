@@ -3,5 +3,6 @@
 - Collins Mucheru
 - Flora Petterson
 - Tyler Johnson
+- Savannah Manning
 - Ragheed Al-midani
 - Daniel Bjanes
