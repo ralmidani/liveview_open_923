@@ -1,3 +1,5 @@
 - Bruce Tate
 - Onorio Catenacci 
 - Collins Mucheru
+- Flora Petterson
+- Tyler Johnson
