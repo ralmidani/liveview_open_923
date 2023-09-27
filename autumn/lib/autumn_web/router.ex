@@ -17,7 +17,7 @@ defmodule AutumnWeb.Router do
   scope "/", AutumnWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", EraserLive
   end
 
   # Other scopes may use custom stacks.
