@@ -24,5 +24,4 @@ defmodule Autumn.Eraser do
     acc.current_text
   end
 
-
 end
