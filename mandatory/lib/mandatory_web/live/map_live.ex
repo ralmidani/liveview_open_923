@@ -1,22 +1,15 @@
 defmodule MandatoryWeb.MapLive do
   use MandatoryWeb, :live_view
+
   alias Mandatory.MapCounter
+  alias MandatoryWeb.CounterComponent
 
   def render(assigns) do
     ~H"""
     <div>
-      <.counter count={@count}/>
+      <.live_component module={CounterComponent} id="counter-1" count="0" />
+      <.live_component module={CounterComponent} id="counter-2" count="0" />
     </div>
-    """
-  end
-
-  attr :count, :any, required: true
-  def counter(assigns) do
-    ~H"""
-      <.button phx-click="inc">
-        Increment
-      </.button>
-      <p> <%= MapCounter.show(@count) %> </p>
     """
   end
 
@@ -25,11 +18,5 @@ defmodule MandatoryWeb.MapLive do
     |> assign(count: MapCounter.new(count))
 
     {:ok, socket}
-  end
-
-  def handle_event("inc", _params, %{assigns: %{count: counter}} = socket) do
-    updated = MapCounter.add(counter, 5)
-
-    {:noreply, assign(socket, count: updated)}
   end
 end
