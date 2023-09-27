@@ -7,16 +7,14 @@ defmodule MandatoryWeb.MapLive do
   def render(assigns) do
     ~H"""
     <div>
-      <.live_component module={CounterComponent} id="counter-1" count="0" />
-      <.live_component module={CounterComponent} id="counter-2" count="0" />
+      <.live_component module={CounterComponent} id="counter-1" count={MapCounter.new("0")} />
+      <.live_component module={CounterComponent} id="counter-2" count={MapCounter.new("1")} />
     </div>
     """
   end
 
-  def mount(%{"count" => count}, _session, socket) do
-    socket = socket
-    |> assign(count: MapCounter.new(count))
-
+  # constructor
+  def mount(_params, _session, socket) do
     {:ok, socket}
   end
 end
