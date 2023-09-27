@@ -6,7 +6,7 @@ defmodule Mandatory.CounterStruct do
   end
 
   def add(%__MODULE__{count: count} = counter, n) when is_integer(n) do
-    %{counter| count: count + n}
+    %{counter | count: count + n}
   end
 
   def show(%__MODULE__{count: count} = counter) do

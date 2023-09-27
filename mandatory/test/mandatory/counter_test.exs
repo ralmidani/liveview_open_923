@@ -16,6 +16,7 @@ defmodule Mandatory.CounterTest do
   describe "crc" do
     test "the pipeline works" do
       expected = "1"
+
       actual =
         "0"
         |> Counter.new()

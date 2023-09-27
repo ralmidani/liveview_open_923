@@ -1,5 +1,5 @@
 defmodule Mandatory.Counter do
-	def new(str) when is_binary(str) do
+  def new(str) when is_binary(str) do
     String.to_integer(str)
   end
 

@@ -1,6 +1,6 @@
 defmodule MandatoryTest.MapCounterTest do
-use ExUnit.Case
-alias Mandatory.MapCounter
+  use ExUnit.Case
+  alias Mandatory.MapCounter
 
   describe "map counter" do
     test "new/1" do
