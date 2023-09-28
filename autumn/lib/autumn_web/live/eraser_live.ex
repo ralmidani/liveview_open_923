@@ -1,7 +1,7 @@
 defmodule AutumnWeb.EraserLive do
   use AutumnWeb, :live_view
 
-  alias Autumn.Eraser
+  alias Autumn.TotalRecall, as: Eraser
 
   def mount(_params, _session, socket) do
     {:ok, assign(socket, form: to_form(%{}), eraser: nil)}
@@ -14,7 +14,7 @@ defmodule AutumnWeb.EraserLive do
         <%= Eraser.show(@eraser) %>
         <.button phx-click="next">Next</.button>
 
-      <%= else %>
+      <% else %>
         <.simple_form for={@form} phx-submit="submit">
           <.input field={@form[:text]} label="text"/>
           <.input field={@form[:steps]} label="steps"/>
@@ -22,7 +22,7 @@ defmodule AutumnWeb.EraserLive do
             <.button>Submit</.button>
           </:actions>
         </.simple_form>
-      <%= end %>
+      <% end %>
     </div>
     """
   end
@@ -37,5 +37,4 @@ defmodule AutumnWeb.EraserLive do
     eraser = Eraser.reduce(socket.assigns.eraser)
     {:noreply, assign(socket, eraser: eraser)}
   end
-
 end
