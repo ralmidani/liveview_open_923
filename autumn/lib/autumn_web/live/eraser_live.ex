@@ -32,7 +32,7 @@ defmodule AutumnWeb.EraserLive do
     {:noreply, assign(socket, eraser: eraser)}
   end
 
-  def handle_event("next", unsigned_params, socket) do
+  def handle_event("next", _unsigned_params, socket) do
     # Call Eraser reduce function
     eraser = TotalRecall.reduce(socket.assigns.eraser)
     {:noreply, assign(socket, eraser: eraser)}

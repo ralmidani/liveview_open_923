@@ -24,7 +24,7 @@ defmodule Autumn.TotalRecall do
             if index in current_plan do
               case char do
                 " " -> " "
-                char -> "_"
+                _char -> "_"
               end
             else
               char
