@@ -4,10 +4,8 @@ defmodule Autumn.TotalRecall do
   def new(p, s) do
     # %__MODULE__{phrase: p, step: s, name: n}
 
-    IO.inspect(p)
-    IO.inspect(s)
     phrase_length = String.length(p)
-    chunk_size = ceil(phrase_length / String.to_integer(s))
+    chunk_size = ceil(phrase_length / s)
 
     plan =
       1..phrase_length
