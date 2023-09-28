@@ -6,3 +6,4 @@
 - Savannah Manning
 - Ragheed Al-midani
 - Daniel Bjanes
+- Yohana Tesfazgi
